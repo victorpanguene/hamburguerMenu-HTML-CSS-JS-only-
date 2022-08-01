@@ -1,0 +1,66 @@
+/* RESETING STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(42, 42, 42);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.menu-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 8rem;
+  cursor: pointer;
+  border: .3rem solid grey;
+  border-radius: .4rem;
+}
+
+.menu-button__burguer{
+ width: 6rem;
+ height: .6rem;
+ background: rgb(134, 134, 134);
+ border-radius: .5rem;
+ box-shadow: 0 .2rem .5rem rgba(255, 255, 101, 47, .2);
+ transition: all 500ms ease-in-out;
+}
+.menu-button__burguer::before,
+.menu-button__burguer::after{
+ content: '';
+ position: absolute;
+ width: 6rem;
+ height: .6rem;
+ background: rgb(134, 134, 134);
+ border-radius: .5rem;
+ box-shadow: 0 .2rem .5rem rgba(255, 255, 101, 47, .2);
+ transition: all 500ms ease-in-out;
+}
+
+.menu-button__burguer::before{
+ transform: translateY(-1.6rem)
+}
+.menu-button__burguer::after{
+ transform: translateY(1.6rem)
+}
+
+/* Animation  on the menu*/
+.menu-button.open .menu-button__burguer{
+ transform: translateX(-5rem);
+ background: transparent;
+ box-shadow: none;
+}
+.menu-button.open .menu-button__burguer::before{
+ transform: rotate(45deg) translate(3.5rem, -3.5rem);
+}
+.menu-button.open .menu-button__burguer::after{
+ transform: rotate(-45deg) translate(3.5rem, 3.5rem);
+}
